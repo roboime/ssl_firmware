@@ -1,1 +1,0 @@
-"mcuboot":"/home/frese/personal_projects/roboime_firmware/bootloader/mcuboot":"/home/frese/personal_projects/roboime_firmware/bootloader/mcuboot/boot/zephyr/sysbuild"
