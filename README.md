@@ -81,7 +81,7 @@ pip3 install zephyr/scripts/requirements.txt
 ### Build test
 Go to the blinky sample directory:
 ```bash
-cd roboime/ssl_firmware/blinky
+cd roboime/ssl_firmware/applications/blinky
 ```
 Build:
 ```bash
