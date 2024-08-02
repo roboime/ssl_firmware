@@ -75,7 +75,7 @@ west zephyr-export
 
 5. Install additional Python dependencies:
 ```bash
-pip3 install zephyr/scripts/requirements.txt
+pip install -r zephyr/scripts/requirements.txt
 ```
 
 ### Build test
