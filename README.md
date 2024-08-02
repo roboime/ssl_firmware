@@ -61,6 +61,7 @@ pip install --upgrade pip
 Install West
 ```bash
 pip install west
+sudo apt install tmux
 
 ```
 
