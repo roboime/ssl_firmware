@@ -66,7 +66,7 @@ pip install west
 
 4. Clone the project repository:
 ```bash
-mkdir ssl_firmware && cd ssl_firmware
+mkdir ssl && cd ssl
 west init -m https://github.com/roboime/ssl_firmware.git
 west config build.board nucleo_h723zg
 west update
