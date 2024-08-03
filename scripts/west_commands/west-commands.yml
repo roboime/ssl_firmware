@@ -1,0 +1,6 @@
+west-commands:
+- file: scripts/west_commands/console.py
+  commands:
+    - name: console
+      class: Console
+      help: Open console

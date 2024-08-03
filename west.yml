@@ -7,5 +7,10 @@ manifest:
       remote: zephyrproject-rtos
       revision: main
       import: true
+    - name: ssl_firmware
+      path: ssl_firmware
+      revision: main  # or specify another branch if needed
+      import: true
   self:
     path: ssl_firmware
+    west-commands: scripts/west-commands.yml 
