@@ -1,0 +1,6 @@
+west-commands:
+  - file: scripts/west_commands/test_command.py
+    commands:
+      - name: test
+        class: TestCommand
+        help: A test command
