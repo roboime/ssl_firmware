@@ -1,7 +1,9 @@
+# scripts/west_commands/my_west_extension.py
+
 from west.commands import WestCommand  # Subclass this for your extension
 from west import log  # Use this for user output
 
-class Console(WestCommand):
+class Console_Robo(WestCommand):
 
     def __init__(self):
         super().__init__(

@@ -2,15 +2,19 @@ manifest:
   remotes:
     - name: zephyrproject-rtos
       url-base: https://github.com/zephyrproject-rtos
+    - name: roboime
+      url-base: https://github.com/roboime
+
   projects:
     - name: zephyr
       remote: zephyrproject-rtos
       revision: main
       import: true
     - name: ssl_firmware
-      path: ssl_firmware
-      revision: main  # or specify another branch if needed
+      revision: main
+      url: https://github.com/roboime/ssl_firmware
       import: true
+
   self:
-    path: ssl_firmware
-    west-commands: scripts/west-commands.yml 
+    path: roboime_firmware
+    west-commands: scripts/west-commands.yml

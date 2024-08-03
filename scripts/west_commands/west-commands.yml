@@ -1,6 +1,6 @@
 west-commands:
-- file: scripts/west_commands/console.py
-  commands:
-    - name: console
-      class: Console
-      help: Open console
+  - file: scripts/west_commands/console.py
+    commands:
+      - name: console
+        class: Console_Robo
+        help: one-line help for what my-command-name does
