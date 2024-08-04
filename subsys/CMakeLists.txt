@@ -1,0 +1,1 @@
+add_subdirectory_ifdef(CONFIG_ROBO_LED robo_led)

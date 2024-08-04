@@ -3,6 +3,7 @@
 #include <zephyr/drivers/spi.h>
 #include <zephyr/logging/log.h>
 
+#include "roboime/robo_led.h"
 #include "init.h"
 #include "sx1280.h"
 
@@ -20,6 +21,13 @@ static const struct gpio_dt_spec cs_gpio_rx = GPIO_DT_SPEC_GET(SX1280_RX_NODE, c
 
 void init(void)
 {
+    // Initialize LEDS
+    int ret;
+    ret = robo_led_init();
+    if (ret < 0) {
+        LOG_ERR("Failed to initialize LEDs\n");
+        return;
+    }
   /*   // Initialize SPI for SX1280
     if (!device_is_ready(spi_dev_tx) || !device_is_ready(spi_dev_rx)) {
         LOG_INF("SPI device not ready");

@@ -1,0 +1,7 @@
+menuconfig ROBO_LED
+    bool "ROBO_LED"
+    select LED
+
+if ROBO_LED
+
+endif # ROBO_LED
