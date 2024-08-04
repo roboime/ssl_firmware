@@ -8,4 +8,7 @@ set(BOARD st_nucleo_h723zg)
 project(nexus)
 
 target_sources(app PRIVATE src/main.c)
-#target_sources(app PRIVATE src/shell.c)
+target_sources(app PRIVATE src/shell.c)
+target_sources(app PRIVATE src/sx1280.c)
+target_sources(app PRIVATE src/work.c)
+target_sources(app PRIVATE src/init.c)
