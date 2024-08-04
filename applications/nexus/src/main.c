@@ -4,7 +4,7 @@
 #include <zephyr/shell/shell.h>
 #include <zephyr/logging/log.h>
 
-LOG_MODULE_REGISTER(main, LOG_LEVEL_INF);
+LOG_MODULE_REGISTER(main, LOG_LEVEL_DBG);
 
 // ANSI color codes
 #define ANSI_COLOR_RED     "\x1b[31m"
@@ -64,6 +64,8 @@ void main(void)
 
     while (1) {
         LOG_INF("Alive");
+        k_sleep(K_MSEC(1000));
+        LOG_DBG("Debug");
         k_sleep(K_MSEC(1000));
     }
 }

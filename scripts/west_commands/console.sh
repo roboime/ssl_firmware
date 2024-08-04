@@ -36,6 +36,10 @@ create_tmux_session() {
         send-keys "cat > $COMMAND_PIPE" C-m \; \
         resize-pane -D 10 \; \
         select-pane -t 0 \; \
+        set -g status-right-length 200\; \
+        set -g status-left-length 300\; \
+        set -g status-left 'RoboIME Console ' \; \
+        set -g status-right "| Serial: $SERIAL_DEVICE | Bound Rate: $BAUD_RATE |" \; \
         bind-key -n C-q kill-session \; \
         bind-key -n C-h select-pane -L \; \
         bind-key -n C-l select-pane -R \; \
