@@ -1,6 +1,6 @@
 west-commands:
-  - file: scripts/west_commands/test_command.py
+  - file: scripts/west_commands/console.py
     commands:
-      - name: test
-        class: TestCommand
-        help: A test command
+      - name: console
+        class: Console
+        help: Open RoboIME console
