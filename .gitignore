@@ -1,1 +1,2 @@
 build/
+scripts/west_commands/__pycache__/*.pyc
