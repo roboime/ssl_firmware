@@ -1,0 +1,10 @@
+//https://docs.zephyrproject.org/latest/build/dts/zephyr-user-node.html
+
+#include <zephyr/dt-bindings/gpio/gpio.h>
+
+/ {
+     zephyr,user {
+             signal-gpios = <&gpioa 1 GPIO_ACTIVE_HIGH>; 
+             signal1-gpios = <&gpioa 4 GPIO_ACTIVE_HIGH>;
+     };
+};
