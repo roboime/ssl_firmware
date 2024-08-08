@@ -33,6 +33,8 @@ void main(void)
     // Main loop
     while (1) {
         LOG_INF("Alive");
+        LOG_ERR("Alive");
+        LOG_DBG("Alive");
         robo_led_toggle(LED_YELLOW);
         robo_led_on(LED_GREEN);
         k_sleep(K_MSEC(1000));
