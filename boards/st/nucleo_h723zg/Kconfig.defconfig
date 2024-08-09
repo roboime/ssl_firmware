@@ -3,7 +3,7 @@
 # Copyright (c) 2020 Alexander Kozhinov <AlexanderKozhinov@yandex.com>
 # SPDX-License-Identifier: Apache-2.0
 
-if BOARD_NUCLEO_H723ZG
+if BOARD_ROBOIME_NUCLEO_H723ZG
 
 if NETWORKING
 
@@ -16,4 +16,4 @@ config USB_DC_HAS_HS_SUPPORT
 	default y
 	depends on USB_DC_STM32
 
-endif # BOARD_NUCLEO_H723ZG
+endif # BOARD_ROBOIME_NUCLEO_H723ZG
