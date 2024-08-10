@@ -54,6 +54,7 @@ static void communication_thread_entry(void *p1, void *p2, void *p3)
 
 void work_init(void)
 {
+    LOG_DBG("Debug message test");
     k_thread_create(&motor_thread, motor_stack, STACK_SIZE,
                     motor_thread_entry, NULL, NULL, NULL,
                     THREAD_PRIORITY, 0, K_NO_WAIT);

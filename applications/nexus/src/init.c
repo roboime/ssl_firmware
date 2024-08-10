@@ -23,6 +23,7 @@ void init(void)
 {
     // Initialize LEDS
     int ret;
+    
     ret = robo_led_init();
     if (ret < 0) {
         LOG_ERR("Failed to initialize LEDs\n");

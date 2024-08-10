@@ -31,19 +31,21 @@ create_tmux_session() {
     fi
 
     tmux new-session -d -s zephyr_session \; \
-        send-keys "stty -F $SERIAL_DEVICE $BAUD_RATE raw -echo && cat $COMMAND_PIPE > $SERIAL_DEVICE & cat $SERIAL_DEVICE | tee $LOG_FILE" C-m \; \
+        send-keys "clear && stty -F $SERIAL_DEVICE $BAUD_RATE raw -echo && cat $COMMAND_PIPE > $SERIAL_DEVICE & cat $SERIAL_DEVICE | tee $LOG_FILE | sed -u -e 's/<dbg>/\x1b[35m&\x1b[1000m/g' -e 's/<inf>/\x1b[32m&\x1b[1000m/g'" C-m \; \
         split-window -h \; \
-        send-keys "cat > $COMMAND_PIPE" C-m \; \
+        send-keys "clear && cat > $COMMAND_PIPE" C-m \; \
         resize-pane -D 10 \; \
         select-pane -t 0 \; \
-        set -g status-right-length 200\; \
-        set -g status-left-length 500\; \
-        set -g status-left 'RoboIME Console | CTRL + q (exit) | CTRL + h (switch console)   ' \; \
+        set -g status-style bg=blue,fg=white \; \
+        set -g status-right-length 200 \; \
+        set -g status-left-length 500 \; \
+        set -g status-left 'RoboIME Console | CTRL + q (exit) | CTRL + h (switch console) |' \; \
         set -g status-right "| Serial: $SERIAL_DEVICE | Bound Rate: $BAUD_RATE |" \; \
         bind-key -n C-q kill-session \; \
         bind-key -n C-h select-pane -L \; \
-        bind-key -n C-l select-pane -R \; \
+        set -g mouse on \; \
         attach-session -t zephyr_session
+
 }
 
 # Main script execution

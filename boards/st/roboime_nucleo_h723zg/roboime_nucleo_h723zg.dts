@@ -67,6 +67,11 @@
 		pwm-led0 = &red_pwm_led;
 		sw0 = &user_button;
 	};
+
+	zephyr,user {
+		pa7-gpios = <&gpioa 1 0>;
+		pa5-gpios = <&gpioa 5 0>;
+	};
 };
 
 &clk_lsi {
@@ -189,4 +194,34 @@ zephyr_udc0: &usbotg_hs {
 
 &rng {
 	status = "okay";
+};
+
+&arduino_header {
+	gpio-map = <0 0 &gpioa 3 0>,
+			   <1 0 &gpioc 0 0>,
+			   <2 0 &gpioc 3 0>,
+			   <3 0 &gpiob 1 0>,
+			   <4 0 &gpioc 2 0>,
+			   <5 0 &gpiof 10 0>,
+			   <6 0 &gpiob 7 0>,
+			   <7 0 &gpiob 6 0>,
+			   <8 0 &gpiog 14 0>,
+			   <9 0 &gpioe 13 0>,
+			   <10 0 &gpioe 14 0>,
+			   <11 0 &gpioe 11 0>,
+			   <12 0 &gpioe 9 0>,
+			   <13 0 &gpiog 12 0>,
+			   <14 0 &gpiof 3 0>,
+			   <15 0 &gpiod 15 0>,
+			   <16 0 &gpiod 14 0>,
+			   <17 0 &gpiob 5 0>,
+			   <18 0 &gpioa 6 0>,
+			   <19 0 &gpioa 5 0>,
+			   <20 0 &gpiob 9 0>,
+			   <21 0 &gpiob 8 0>;
+};
+
+&timers1 {
+	status = "disabled";
+	zephyr,deferred-init;
 };
