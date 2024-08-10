@@ -82,7 +82,7 @@ pip install -r zephyr/scripts/requirements.txt
 ### Build test
 Go to the blinky sample directory:
 ```bash
-cd roboime/ssl_firmware/applications/blinky
+cd roboime/ssl_firmware/applications/nexus
 ```
 Build:
 ```bash
@@ -93,7 +93,11 @@ Flash:
 ```bash
 west flash
 ```
+Open RoboIME console:
 
+```bash
+west console
+```
 ## VSCode configs
 
 Install *nRF Device Tree* Extension
