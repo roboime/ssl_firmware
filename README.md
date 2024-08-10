@@ -94,3 +94,13 @@ Flash:
 west flash
 ```
 
+## VSCode configs
+
+Install *nRF Device Tree* Extension
+
+Add this config
+
+![image](https://github.com/user-attachments/assets/a0f7fa28-79cd-4ec5-ba93-87f4c89079b0)
+
+
+
