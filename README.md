@@ -69,7 +69,7 @@ sudo apt install tmux
 ```bash
 mkdir ssl && cd ssl
 west init -m https://github.com/roboime/ssl_firmware.git
-west config build.board nucleo_h723zg
+west config build.board roboime_nucleo_h723zg
 west update
 west zephyr-export
 ```

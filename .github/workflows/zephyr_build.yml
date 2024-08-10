@@ -45,7 +45,7 @@ jobs:
           mkdir ssl && cd ssl
           west init -m https://github.com/roboime/ssl_firmware.git
           west update
-          west config build.board nucleo_h723zg
+          west config build.board roboime_nucleo_h723zg
           west zephyr-export
           pip install -r zephyr/scripts/requirements.txt
 
