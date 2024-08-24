@@ -41,8 +41,8 @@ create_tmux_session() {
         set -g status-left-length 500 \; \
         set -g status-left 'RoboIME Console | CTRL + q (exit) | CTRL + h (switch console) |' \; \
         set -g status-right "| Serial: $SERIAL_DEVICE | Bound Rate: $BAUD_RATE |" \; \
-        bind-key -n C-q kill-session \; \
-        bind-key -n C-h select-pane -L \; \
+        bind-key -n F10 kill-session \; \
+        bind-key -n F9 select-pane -L \; \
         set -g mouse on \; \
         attach-session -t zephyr_session
 
