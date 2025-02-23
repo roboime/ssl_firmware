@@ -15,13 +15,17 @@ Follow these steps to set up the development environment on your PC:
 ### Installation Steps
 
 1. Install system dependencies:
+```bash
+wget https://apt.kitware.com/kitware-archive.sh
+sudo bash kitware-archive.sh
+```
 
 ```bash
 sudo apt update
 sudo apt install --no-install-recommends git cmake ninja-build gperf \
-ccache dfu-util device-tree-compiler wget \
-python3-dev python3-pip python3-setuptools python3-tk python3-wheel xz-utils file \
-make gcc gcc-multilib g++-multilib libsdl2-dev
+  ccache dfu-util device-tree-compiler wget \
+  python3-dev python3-pip python3-setuptools python3-tk python3-wheel xz-utils file \
+  make gcc gcc-multilib g++-multilib libsdl2-dev libmagic1
 sudo apt install python3-venv
 ```
 
@@ -30,13 +34,13 @@ Create a target directory for the toolchain:
 ```bash
 mkdir -p $HOME/.local/opt
 ```
-Download and unpack the toolchain:
+Download and unpack the SDK (0.17.0):
 ```bash
-wget https://github.com/zephyrproject-rtos/sdk-ng/releases/download/v0.16.8/zephyr-sdk-0.16.8_linux-x86_64.tar.xz -O - | xz -d -c - | tar xv -C $HOME/.local/opt
+wget https://github.com/zephyrproject-rtos/sdk-ng/releases/download/v0.17.0/zephyr-sdk-0.17.0_linux-x86_64.tar.xz -O - | xz -d -c - | tar xv -C $HOME/.local/opt
 ```
 Run the Zephyr SDK bundle setup script:
 ```bash
-$HOME/.local/opt/zephyr-sdk-0.16.8/setup.sh
+$HOME/.local/opt/zephyr-sdk-0.17.0/setup.sh
 ```
 3. Setup Local:
 Create `/roboime folder`:
