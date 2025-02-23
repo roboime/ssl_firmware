@@ -71,7 +71,7 @@ sudo apt install tmux
 
 4. Clone the project repository:
 ```bash
-mkdir ssl-sdk && cd ssl-sdk
+mkdir ssl_sdk && cd ssl_sdk
 west init -m https://github.com/roboime/ssl_firmware.git
 west config build.board roboime_nucleo_h723zg
 west update
@@ -86,7 +86,7 @@ pip install -r zephyr/scripts/requirements.txt
 ### Build test
 Go to the blinky sample directory:
 ```bash
-cd roboime/ssl/applications/console
+cd roboime/ssl-sdk/ssl_firmware/applications/console
 ```
 Build:
 ```bash
