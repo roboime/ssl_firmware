@@ -15,10 +15,11 @@ static int cmd_hello(const struct shell *shell, size_t argc, char **argv)
 
 static int cmd_menu(const struct shell *shell, size_t argc, char **argv)
 {
-    shell_print(shell, "RoboIME Menu:" );
-    shell_print(shell, "1. Option 1 - Print Hello");
-    shell_print(shell, "2. Option 2 - Print Goodbye");
-    shell_print(shell, "3. Exit");
+    /* Use ANSI escape codes for colored text */
+    shell_print(shell, "\033[1;34m==== RoboIME Menu ====\033[0m");
+    shell_print(shell, "\033[1;32m1. Option 1 - Print Hello\033[0m");
+    shell_print(shell, "\033[1;33m2. Option 2 - Print Goodbye\033[0m");
+    shell_print(shell, "\033[1;31m3. Exit\033[0m");
     return 0;
 }
 
@@ -42,7 +43,7 @@ static int cmd_exit(const struct shell *shell, size_t argc, char **argv)
     return 0;
 }
 
-// Register commands
+/* Register commands */
 SHELL_CMD_REGISTER(hello, NULL, "Prints a greeting message", cmd_hello);
 SHELL_CMD_REGISTER(menu, NULL, "Displays the menu", cmd_menu);
 SHELL_CMD_REGISTER(option1, NULL, "Select Option 1", cmd_option1);
