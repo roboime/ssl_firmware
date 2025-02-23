@@ -1,0 +1,48 @@
+/ {
+    chosen {
+        zephyr,display = &lcd_display;
+    };
+
+    reset: reset_gpio {
+        compatible = "gpio-keys";
+        reset_pin: reset_pin {
+            gpios = <&gpiod 7 GPIO_ACTIVE_HIGH>;
+            label = "Display Reset";
+        };
+    };
+
+    dc: dc_gpio {
+        compatible = "gpio-keys";
+        dc_pin: dc_pin {
+            gpios = <&gpiod 6 GPIO_ACTIVE_HIGH>;
+            label = "Display DC";
+        };
+    };
+
+    cs: cs_gpio {
+        compatible = "gpio-keys";
+        cs_pin: cs_pin {
+            gpios = <&gpiod 5 GPIO_ACTIVE_HIGH>;
+            label = "Display CS";
+        };
+    };
+
+    lcd_display: lcd_display {
+        compatible = "roboime,display-gpio-spi";  /* Updated compatible string */
+        status = "okay";
+        width = <240>;
+        height = <320>;
+        spi-dev = <&spi1>;
+
+        dc-gpios = <&gpiod 6 GPIO_ACTIVE_HIGH>;
+        reset-gpios = <&gpiod 7 GPIO_ACTIVE_HIGH>;
+        cs-gpios = <&gpiod 5 GPIO_ACTIVE_HIGH>;
+    };
+};
+
+&spi1 {
+    status = "okay";
+    pinctrl-0 = <&spi1_sck_pa5 &spi1_miso_pa6 &spi1_mosi_pa7>;
+    pinctrl-names = "default";
+    cs-gpios = <&gpiod 5 GPIO_ACTIVE_LOW>;
+};
